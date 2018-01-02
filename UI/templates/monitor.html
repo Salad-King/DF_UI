@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    setTimeout(function () {
+         window.location.href = "";
+      }, 5000);
+  </script>
+    <meta charset="UTF-8">
+    <title>Monitor</title>
+</head>
+<body align="center">
+<h2>Job Status from the last 4 hours</h2>
+<table border="1" align="center" style="border-collapse:collapse;" cellpadding="5" cellspacing="3" summary="">
+    <th>SL No.</th>
+    <th>Job Name</th>
+    <th>Job ID</th>
+    <th>Job Status</th>
+    <th>Current State Time</th>
+    {% for job in jobs %}
+    <tr>
+      <td align="center">{{ job.num }}</td>
+      <td align="center">{{ job.name }}</td>
+      <td align="center">{{ job.id }}</td>
+      <td align="center">{{ job.currentState }}</td>
+      <td align="center">{{ job.currentStateTime }}</td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
